@@ -4,8 +4,7 @@ import java.util.Arrays;
 
 /*
  * Problem: Given a sorted array with duplicate values, 
- * remove the duplicates so each value appears only once, 
- * and return the count of unique values.
+ * remove the duplicates so each value appears only once, and return the count of unique values.
  * 
  * Constraints:
  * The array is sorted in ascending order.
@@ -17,7 +16,6 @@ import java.util.Arrays;
 public class RemoveDuplicates {
 
 	public static int removeDuplicates(int[] array) {
-
 //		Empty Array.
 		if (array.length == 0) {
 			return 0;
@@ -25,9 +23,7 @@ public class RemoveDuplicates {
 
 		int j = 0;
 		for (int i = 1; i < array.length; i++) {
-			if (array[i] == array[j]) {
-				continue;
-			} else {
+			if (array[j] != array[i]) {
 				j++;
 				array[j] = array[i];
 			}
@@ -36,8 +32,12 @@ public class RemoveDuplicates {
 	}
 
 	public static void main(String[] args) {
-		int[] array = { 1, 1, 2, 2, 2, 3 };
-		System.out.println("Count of unique Elements : " + removeDuplicates(array));
+		int[] array = { 1, 1, 1, 2, 3, 4, 5, 6, 6 };
+		System.out.println("Original Array : " + Arrays.toString(array));
+		int count = removeDuplicates(array);
+		System.out.print("Count: " + count + " | unique: ");
+		for (int i = 0; i < count; i++) {
+			System.out.print(array[i] + " ");
+		}
 	}
-
 }

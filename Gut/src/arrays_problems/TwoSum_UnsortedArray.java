@@ -16,7 +16,7 @@ public class TwoSum_UnsortedArray {
 			compliment = target - array[i];
 //			conatainsKey returns boolean values for checking that given key is present in the map or not.
 			if (map.containsKey(compliment)) {
-//				map.get(key) takes key as the input and returns int which is value in key-value pair.
+//			map.get(key) takes key as the input and returns int which is value in key-value pair.
 				return new int[] { map.get(compliment), i };
 			}
 
